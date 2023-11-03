@@ -2,9 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage ('Print') {
+        stage('Build') {
             steps {
-                echo "Hello Devops Engineers"
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
