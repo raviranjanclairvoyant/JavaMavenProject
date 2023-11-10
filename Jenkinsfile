@@ -5,7 +5,7 @@ pipeline {
       }
 
     stages {
-        stage('New Build') {
+        stage('New Build ') {
             steps {
               sh 'mvn clean package'
             }
@@ -18,6 +18,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                gcloud --help
                 echo 'Deploying....'
             }
         }
