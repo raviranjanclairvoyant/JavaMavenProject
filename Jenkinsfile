@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                gcloud --help
+                sh 'gcloud --help'
                 echo 'Deploying....'
             }
         }
