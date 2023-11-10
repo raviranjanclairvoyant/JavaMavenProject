@@ -16,11 +16,16 @@ pipeline {
                 echo 'Testing..'
             }
         }
-        stage('Deploy') {
-            steps {
-                sh 'gcloud --help'
-                echo 'Deploying....'
-            }
-        }
-    }
+        stages {
+            stage('Run gcloud') {
+
+                steps {
+                    withEnv(['GCLOUD_PATH=/usr/lib/google-cloud-sdk/bin']) {
+                        sh '$GCLOUD_PATH/gcloud --version'
+                    }
+
+                 }
+              }
+           }
+
 }
