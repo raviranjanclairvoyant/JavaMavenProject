@@ -16,6 +16,7 @@ pipeline {
                 echo 'Testing..'
             }
         }
+
         stages {
             stage('Run gcloud') {
 
